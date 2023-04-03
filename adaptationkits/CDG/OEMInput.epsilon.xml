@@ -2,8 +2,19 @@
 <OEMInput xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/embedded/2019/06/ImageUpdate">
   <Description>ModernPC WCOSCDG_Internal_Andromeda855 en-us image. ANDROMEDA855 OEMInput for Epsilon on arm64</Description>
   <DeviceLayoutType>ANDROMEDA855</DeviceLayoutType>
-  <SV>Microsoft</SV>
   <Device>Andromeda855</Device>
+  <DevicePlatformIDs>
+    <DevicePlatformID>Microsoft Corporation.Surface.Surface Duo.1930</DevicePlatformID>
+    <DevicePlatformID>OEMB1.*.OEMB1 Product.*</DevicePlatformID>
+  </DevicePlatformIDs>
+  <DeviceTargeting>
+    <DeviceTargetInfo>
+      <Manufacturer>Microsoft Corporation</Manufacturer>
+      <Family>Surface</Family>
+      <ProductName>Surface Duo</ProductName>
+      <SKUNumber>Surface_Duo_1930</SKUNumber>
+    </DeviceTargetInfo>
+  </DeviceTargeting>
   <ReleaseType>Test</ReleaseType>
   <BuildType>fre</BuildType>
   <Languages>
@@ -30,20 +41,18 @@
     <Language>zh-TW</Language>
   </Languages>
   <AdditionalFMs>
-    <!-- Microsoft -->
-    <AdditionalFM>F:\SurfaceDuo-Drivers-main\adaptationkits\CDG\FMs\WindowsCoreProductionFM.xml</AdditionalFM>
-    <AdditionalFM>F:\SurfaceDuo-Drivers-main\adaptationkits\CDG\FMs\WindowsCoreNonProductionFM.xml</AdditionalFM>
-    <AdditionalFM>F:\SurfaceDuo-Drivers-main\adaptationkits\CDG\FMs\WindowsCoreInternalOnlyFM.xml</AdditionalFM>
-    <AdditionalFM>F:\SurfaceDuo-Drivers-main\adaptationkits\CDG\FMs\ModernPCAppsFM.xml</AdditionalFM>
-    <AdditionalFM>F:\SurfaceDuo-Drivers-main\adaptationkits\CDG\FMs\ModernPCSelfhostFM.xml</AdditionalFM>
-    <AdditionalFM>F:\SurfaceDuo-Drivers-main\adaptationkits\CDG\FMs\ModernPCNonProductionFM.xml</AdditionalFM>
-    <AdditionalFM>F:\SurfaceDuo-Drivers-main\adaptationkits\CDG\FMs\WCOSCDGFM.xml</AdditionalFM>
-    <AdditionalFM>F:\SurfaceDuo-Drivers-main\adaptationkits\CDG\FMs\MobileDeviceSpaceFM.xml</AdditionalFM>
-    <!-- OEM -->
-    <AdditionalFM>F:\SurfaceDuo-Drivers-main\adaptationkits\CDG\FMs\OEM\Andromeda855DeviceFM.xml</AdditionalFM>
-    <AdditionalFM>F:\SurfaceDuo-Drivers-main\adaptationkits\CDG\FMs\OEM\Andromeda855DeviceDriversFM.xml</AdditionalFM>
+    <AdditionalFM>E:\FMs\WindowsCoreProductionFM.xml</AdditionalFM>
+    <AdditionalFM>E:\FMs\WindowsCoreNonProductionFM.xml</AdditionalFM>
+    <AdditionalFM>E:\FMs\WindowsCoreInternalOnlyFM.xml</AdditionalFM>
+    <AdditionalFM>E:\FMs\ModernPCAppsFM.xml</AdditionalFM>
+    <AdditionalFM>E:\FMs\ModernPCSelfhostFM.xml</AdditionalFM>
+    <AdditionalFM>E:\FMs\ModernPCNonProductionFM.xml</AdditionalFM>
+    <AdditionalFM>E:\FMs\WCOSCDGFM.xml</AdditionalFM>
+    <AdditionalFM>E:\FMs\MobileDeviceSpaceFM.xml</AdditionalFM>
+    <!-- Add OEM FMs here. -->
+    <AdditionalFM>E:\FMs\OEM\Andromeda855DeviceFM.xml</AdditionalFM>
+    <AdditionalFM>E:\FMs\OEM\Andromeda855DeviceDriversFM.xml</AdditionalFM>
   </AdditionalFMs>
-  <MachineInfoFile>F:\SurfaceDuo-Drivers-main\adaptationkits\CDG\machineinfo.epsilon.xml</MachineInfoFile>
   <Features>
     <Microsoft>
       <Feature>ALLOW_CONNECTEDSTANDBY</Feature>
@@ -79,7 +88,6 @@
       <Feature>WCOS_TIMESYNC_MOBILE</Feature>
       <Feature>WCOS_TIMESYNC_NETWORK_WOW</Feature>
       <Feature>WCOS_XBOX_AUTHENTICATION</Feature>
-      <Feature>MANUFACTURING_ENABLEBASICDISPLAYFALLBACK</Feature>
     </Microsoft>
   </Features>
   <AppXOptionalPackages>
