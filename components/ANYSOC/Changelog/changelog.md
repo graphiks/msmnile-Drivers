@@ -1,5 +1,5 @@
-## Surface Duo Drivers BSP - Version 2305.45
-**Released:** 05/14/2023 11:00 PM UTC+2
+## Surface Duo Drivers BSP - Version 2305.90 (Paracheirodon innesi)
+**Released:** 05/31/2023 00:00 PM UTC+1
 
 **Quality:** Preview
 
@@ -16,13 +16,13 @@ ________________________________________________________________________________
 
 #### Important information
 
-- ⚠️ This version of the drivers needs to be paired with UEFI version greater or equal to 2305.45.
+- ⚠️ This version of the drivers needs to be paired with UEFI version greater than or equal to 2305.90.
 
-- ⚠️ For users that are updating from an earlier release than version 2301.93, please follow the following migration guidance https://github.com/WOA-Project/SurfaceDuo-Guides/blob/main/Update/MigrationGuidanceForSecureBoot.md and please download the latest driverupdater release as well!: https://github.com/WOA-Project/DriverUpdater/releases/tag/v1.9.0.0
+- ⚠️ For users who are updating from an earlier release than version 2301.93, please follow the following migration guidance: https://github.com/WOA-Project/SurfaceDuo-Guides/blob/main/Update/MigrationGuidanceForSecureBoot.md and please download the latest DriverUpdater release as well: https://github.com/WOA-Project/DriverUpdater/releases/tag/v1.9.0.0
 
-- ⚠️ If you need dual boot, you will have to make your own image, please follow this guidance: https://github.com/WOA-Project/SurfaceDuo-Guides/blob/main/DualBoot.md
+- ⚠️ If you need dual boot, you will have to make your own image. Please follow this guidance: https://github.com/WOA-Project/SurfaceDuo-Guides/blob/main/DualBoot.md
 
-- ⚠️ You need to backup your original boot image for OTAs to work with Android. When you'll get an OTA, you will want to revert your boot image for the update to work or you'll have to use an official OTA recovery package.
+- ⚠️ You need to backup your original boot image for OTAs to work with Android. When you get an OTA, you will want to revert your boot image for the update to work, or you'll have to use an official OTA recovery package.
 
 ### Changelog
 
@@ -30,31 +30,9 @@ ________________________________________________________________________________
 
 What's new?
 
-- **_New!_** Surface Integration System Service and Drivers are now functional under Windows. Expect more soon with these. (You can already download the Surface App from the store)
+- This update contains a lot of changes that would be too long to explain. Notably more fixes for postures not working after sleep, further stability improvements, and as another os would put it:
 
-- **_New!_** Enables More temperature sensors to be accessible from Windows, including the ones in both battery packs
-
-- **_New!_** Reworked Audio Topology to enable Cellular audio channels
-
-- **_New!_** Improved stability regarding Lid Angle sensor events when the device is closed
-
-- **_Fix!_** Addresses an issue impacting Surface Thunderbolt(TM) 4 Dock functionality with Surface Duo first Generation devices
-
-- **_Fix!_** Addresses an issue where touch would stop working after a few minutes of inactivity 
-
-- **_Fix!_** Addresses an issue where device internal topology was incorrect leading to issues with displays
-
-- **_Fix!_** Addresses an issue where auto rotation stopped working in the past two releases
-
-- **_Fix!_** Addresses an issue where fold/flip/posture sensors stopped working in the past two releases
-
-- **_Soon!_** More work going on with Audio/Camera/Battery, still nothing to share
-
-- **_Important!_** Some changes/bug fixes had to be delayed for this release, a newer version will be released mid next week alongside a new flashing method and WCOS ffus. Stay tuned!
-
-- **_Important!_** Surface Duo 2 is now supported again but was untested. Make sure everything is up to date beforehand (UEFI notably)
-
-- **_Important!_** Charging has been permanently removed until further notice. Installing it will not do anything anymore.
+- General system stability improvements to enhance the user's experience.
 
 - **_Important!_** New definition files are present, here's a summary of how to proceed:
 
@@ -70,37 +48,37 @@ I am running a build >= 19041, use Driver Updater with ```\definitions\Desktop\A
 
 Known issues
 
-- Booting Windows 10 18362/18363 will lead to "static screen" effects on the right display much like driver releases from last year did on any version of Windows. A fix is being worked on for the next release.
+- Booting Windows 10 18362/18363 will lead to "static screen" effects on the right display, much like driver releases from last year did on any version of Windows. A fix is being worked on for the next release.
 - The TPM driver is not working for Windows 10 18362/18363. A fix is being worked on for the next release.
 - The Posture driver is not working for Windows 10 18362/18363. A fix is being worked on for the next release.
 - Enhanced auto rotation is not working for Windows 10 18362/18363. A fix is being worked on for the next release.
-- Brightness control is glitchy on both displays
-- Audio speakers are not functional
-- Dongles are not detected correctly when plugged into the USB Type C port
-- Battery charging remains unstable and not recommended
-- Updating drivers may lead to weird configurations if done on old driver releases
-- MAC Addresses do not reflect the real addresses asigned to the device
-- Bitlocker drive encryption is not available
-- USB Dongles that are not externally powered may not currently work
-- USB C Billboard devices will not currently work
-- External Display Stream support will not currently work
-- Additional information provided by the posture sensor is currently not available for public consumption, this includes peek events.
-- Digitizers will not react to the device being folded over
-- Displays will not react to the device being folded over most of the time
-- Physical device data is incorrect
-- Digitizers aren't calibrated correctly
-- Flipping the device however is not smooth
-- Charging remains unavailable in Windows, please charge in Android
+- Brightness control is glitchy on both displays.
+- Audio speakers are not functional.
+- Dongles are not detected correctly when plugged into the USB Type-C port.
+- Battery charging remains unstable and not recommended.
+- Updating drivers may lead to weird configurations if done on old driver releases.
+- MAC addresses do not reflect the real addresses asigned to the device.
+- BitLocker drive encryption is not available.
+- USB dongles that are not externally powered may not currently work.
+- USB-C Billboard devices will not currently work.
+- External Display Stream support will not currently work.
+- Additional information provided by the posture sensor is currently not available for public consumption. This includes peek events.
+- Digitizers will not react to the device being folded over.
+- Displays will not react to the device being folded over most of the time.
+- Physical device data is incorrect.
+- Digitizers aren't calibrated correctly.
+- Flipping the device, however, is not smooth.
+- Charging remains unavailable in Windows. Please charge in Android.
 - Users upgrading from releases older than the January ones may want to clean install again.
 - Booting Windows 10 18362/18363 with Secure Boot enabled is not currently supported and will result in a broken installation.
-- In some cases booting the UEFI image may lead to static screen effects on the left display. Please do not force reboot the device as it may interrupt the installation process, if ongoing, and instead please wait a few minutes
+- In some cases, booting the UEFI image may lead to "static screen" effects on the left display. Please do not force reboot the device as it may interrupt the installation process, if ongoing, and instead please wait a few minutes.
 - Windows Recovery environment lacks drivers unless Windows has performed a Feature Update at least once.
 - sRGB is not available currently, and displays will not react to ICC profiles being applied.
 
 
 #### Surface Duo 2
 
-- Support for Surface Duo 2 is not provided with this release. We are trying to get an update for Surface Duo 2 as part of the next release as soon as we can.
+- A lot. Too long to list, Surface Duo 2 is still a Proof of Concept (PoC), don't expect much.
 
 
 ### Accessing Foldable Sensors from your applications
