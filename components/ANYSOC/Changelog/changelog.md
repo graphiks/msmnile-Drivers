@@ -1,89 +1,152 @@
-## Surface Duo Drivers BSP - Version 2305.90 (Paracheirodon innesi)
-**Released:** 05/31/2023 00:00 PM UTC+1
+## Surface Duo Drivers BSP - Version 2310.1 (Sunflower)
+
+<details>
+  <summary>General information</summary>
+  <p>
+**Released:** 09/24/2023 11:00 PM UTC+1
 
 **Quality:** Preview
 
-![Surface Duo Dual Screen Windows](https://user-images.githubusercontent.com/3755345/197420866-d3bb0534-c848-4cc2-a242-04dae48b0f6e.png)
-
-### General information
-
 You can view compatibility for this release, along with important information and what works, and what doesn't at this link: https://github.com/WOA-Project/SurfaceDuo-Guides/blob/main/Status.md
+  </p>
+</details>
 
-
-### Release notes
-
-____________________________________________________________________________________________________________________________
-
-#### Important information
-
-- ⚠️ This version of the drivers needs to be paired with UEFI version greater than or equal to 2305.90.
+<details>
+  <summary>Important information</summary>
+  <p>
+- ⚠️ This version of the drivers needs to be paired with UEFI version greater than or equal to 2309.80.
 
 - ⚠️ For users who are updating from an earlier release than version 2301.93, please follow the following migration guidance: https://github.com/WOA-Project/SurfaceDuo-Guides/blob/main/Update/MigrationGuidanceForSecureBoot.md and please download the latest DriverUpdater release as well: https://github.com/WOA-Project/DriverUpdater/releases/tag/v1.9.0.0
 
 - ⚠️ If you need dual boot, you will have to make your own image. Please follow this guidance: https://github.com/WOA-Project/SurfaceDuo-Guides/blob/main/DualBoot.md
 
 - ⚠️ You need to backup your original boot image for OTAs to work with Android. When you get an OTA, you will want to revert your boot image for the update to work, or you'll have to use an official OTA recovery package.
+  </p>
+</details>
 
-### Changelog
+---
+
+### Release notes
 
 #### Surface Duo 1
 
 What's new?
 
-- This update contains a lot of changes that would be too long to explain. Notably more fixes for postures not working after sleep, further stability improvements, and as another os would put it:
+- Hopefully fixes an issue where some people had a bugcheck (BOUND_IMAGE_UNSUPPORTED) with qcbattminiclass installed. Please let us know if you still get this issue because we were never able to reproduce that one. If you get this issue on clean installs, please remove the qcbattminiclass driver temporarily for installation.
+
+- We fixed the issue that prevented Gallium Windows builds from cleaninstalling with sensor drivers installed. For now you may get a black screen on the second boot, but you can press the power button when you do and the installation will continue. We hope to address further of the issues linked to this with a later release. For now this means, epsilon_ga.txt is no more. Use epsilon.txt :) (Note: you may need to wait 15s before it starts to really work and show just a moment, or plug in a charger/unplug it, but it will work, do not long press power or you'll reboot the device and get into a broken state)
+
+- Added support for servicing UFS storage chip firmwares in the Operating System
+
+- Introducing the Thermal Framework Proxy driver stack, this aims to solve a few issues with thermals and efficiency when the device is closed all the way, folded all the way, or fully open flat. More improvements regarding thermals are expected soon.
+
+- Introducing the driver to enable eSIM module firmware updates under Windows
+
+- Updates the following drivers to version 1.0.2020.0:
+	- Qualcomm Audio Miniport Driver for OEMB1 devices
+	- Qualcomm Audio Sound Listening Model for Voice Activation System Service for OEMB1 devices
+	- Qualcomm Audio System Configuration Package for OEMB1 devices
+	- Qualcomm Audio Miniport Configuration Package for OEMB1 devices
+	- Qualcomm Sensor Configuration Package for OEMB1 devices
+	- Qualcomm Modem Configuration Package for OEMB1 devices
+	- Qualcomm Audio DSP Extension Package for OEMB1 devices
+	- Qualcomm Compute DSP Extension Package for OEMB1 devices
+	- Qualcomm Modem DSP Extension Package for OEMB1 devices
+	- Qualcomm Sensor DSP Extension Package for OEMB1 devices
+	- Qualcomm Trusted Runtime Environment Driver for OEMB1 devices
+	- Qualcomm Adreno 640 Driver for OEMB1 devices (Desktop & WCOS)
+	- Qualcomm Subsystem Manager Driver
+	- Qualcomm Atheros Bluetooth Driver for OEMB1 devices
+	- Qualcomm Atheros Bluetooth Configuration Package for OEMB1 devices
+	- Qualcomm Atheros Bluetooth Subdevice Extension Package
+	- Qualcomm Atheros WLAN Driver for OEMB1 devices
 
 - General system stability improvements to enhance the user's experience.
 
-- **_Important!_** New definition files are present, here's a summary of how to proceed:
+<details>
+  <summary><b><i>Important!</i></b> New definition files are present, here's a summary of how to proceed:</summary>
+  <p>
+- I am running a build < 17763, you are unsupported.
 
+- I am running a build < 18362, use Driver Updater with ```\definitions\Desktop\ARM64\epsilon_rs5.txt```
 
-I am running a build < 17763, you are unsupported.
+- I am running a build < 19041, use Driver Updater with ```\definitions\Desktop\ARM64\epsilon_ti.txt```
 
-I am running a build < 18362, use Driver Updater with ```\definitions\Desktop\ARM64\epsilon_rs5.txt```
+- I am running a build >= 25905, use Driver Updater with ```\definitions\Desktop\ARM64\epsilon.txt```
+  </p>
+</details>
 
-I am running a build < 19041, use Driver Updater with ```\definitions\Desktop\ARM64\epsilon_ti.txt```
+<details>
+  <summary>Known issues</summary>
+  <p>
+- Dialer and the underlying phone stack are not available under Gallium Semester OS builds (Canary Channel)
 
-I am running a build >= 19041, use Driver Updater with ```\definitions\Desktop\ARM64\epsilon.txt```
-
-
-Known issues
+- Installing Gallium Semester Insider builds may lead to a black screen on second boot of the OS, simply press the power button to continue.
 
 - Booting Windows 10 18362/18363 will lead to "static screen" effects on the right display, much like driver releases from last year did on any version of Windows. A fix is being worked on for the next release.
+
 - The TPM driver is not working for Windows 10 18362/18363. A fix is being worked on for the next release.
+
 - The Posture driver is not working for Windows 10 18362/18363. A fix is being worked on for the next release.
+
 - Enhanced auto rotation is not working for Windows 10 18362/18363. A fix is being worked on for the next release.
+
 - Brightness control is glitchy on both displays.
-- Audio speakers are not functional.
+
+- On device speakers are not functional.
+
 - Dongles are not detected correctly when plugged into the USB Type-C port.
+
 - Battery charging remains unstable and not recommended.
+
 - Updating drivers may lead to weird configurations if done on old driver releases.
+
 - MAC addresses do not reflect the real addresses asigned to the device.
+
 - BitLocker drive encryption is not available.
+
 - USB dongles that are not externally powered may not currently work.
+
 - USB-C Billboard devices will not currently work.
+
 - External Display Stream support will not currently work.
+
 - Additional information provided by the posture sensor is currently not available for public consumption. This includes peek events.
+
 - Digitizers will not react to the device being folded over.
+
 - Displays will not react to the device being folded over most of the time.
+
 - Physical device data is incorrect.
+
 - Digitizers aren't calibrated correctly.
+
 - Flipping the device, however, is not smooth.
-- Charging remains unavailable in Windows. Please charge in Android.
+
 - Users upgrading from releases older than the January ones may want to clean install again.
+
 - Booting Windows 10 18362/18363 with Secure Boot enabled is not currently supported and will result in a broken installation.
+
 - In some cases, booting the UEFI image may lead to "static screen" effects on the left display. Please do not force reboot the device as it may interrupt the installation process, if ongoing, and instead please wait a few minutes.
+
 - Windows Recovery environment lacks drivers unless Windows has performed a Feature Update at least once.
+
 - sRGB is not available currently, and displays will not react to ICC profiles being applied.
+  </p>
+</details>
 
 
 #### Surface Duo 2
 
-- A lot. Too long to list, Surface Duo 2 is still a Proof of Concept (PoC), don't expect much.
+What's new?
 
+- Nothing New. Surface Duo 2 is still a Proof of Concept (PoC), don't expect much.
 
-### Accessing Foldable Sensors from your applications
+---
 
-
+<details>
+  <summary>Accessing Foldable Sensors from your applications</summary>
+  <p>
 In order to currently access the sensor data given by the foldable sensors, you need to use the following apis:
 
 
@@ -302,12 +365,12 @@ int main()
 	catch (...) {}
 }
 ```
+  </p>
+</details>
 
-____________________________________________________________________________________________________________________________
-
-
-How to offline update an existing Windows Desktop installation
-
+<details>
+  <summary>How to offline update an existing Windows Desktop installation</summary>
+  <p>
 - Switch the device into mass storage.
 - Take note of the drive letter the Windows partition is using, here we will assume it got mounted as I:
 
@@ -321,19 +384,25 @@ How to offline update an existing Windows Desktop installation
   DriverUpdater.exe -d C:\UpdatedDrivers\SurfaceDuo-Drivers-XXXX\definitions\Desktop\ARM64\Internal\epsilon.txt -r C:\UpdatedDrivers\SurfaceDuo-Drivers-XXXX\ -p I:\
 
 - Reboot the device, the device will now begin PnP setup once again, and hopefully you will be back soon enough to your desktop
+  </p>
+</details>
 
-____________________________________________________________________________________________________________________________
+<details>
+  <summary>How to install Windows Desktop on internal Storage</summary>
+  <p>
+Please follow the steps detailed at https://github.com/WOA-Project/SurfaceDuo-Guides
+  </p>
+</details>
 
-
-How to install Windows Desktop on internal Storage
-
-- Please follow the steps detailed at https://github.com/WOA-Project/SurfaceDuo-Guides
-
-____________________________________________________________________________________________________________________________
-
-
-### Bug reporting
-
+<details>
+  <summary>Bug reporting</summary>
+  <p>
 This release is a Preview release. Bug exists and may happen. If you notice a bug not present in the following bug list, please report them on our Telegram Group.
+  </p>
+</details>
 
--- WOA-Project Team
+---
+
+Seems Faster(TM)
+
+-- The DuoWoA authors

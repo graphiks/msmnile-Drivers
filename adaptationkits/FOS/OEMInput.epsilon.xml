@@ -1,33 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <OEMInput xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/embedded/2019/06/ImageUpdate">
-  <Description>FactoryOSArgon Development_Internal_Epsilon en-us image. EPSILON_SPACES OEMInput for AndromedaH855 on arm64</Description>
-  <DeviceLayoutType>EPSILON_SPACES</DeviceLayoutType>
-  <SV>Microsoft</SV>
-  <!-- HACK: Use AndromedaH845 as the device name to enable a few ImageApp customizations -->
-  <Device>AndromedaH845</Device>
+  <Description>FactoryOSArgon Development_Internal_Andromeda855 en-us image. ANDROMEDA855 OEMInput for Epsilon on arm64</Description>
+  <DeviceLayoutType>ANDROMEDA855</DeviceLayoutType>
+  <Device>Andromeda855</Device>
+  <DevicePlatformIDs>
+    <DevicePlatformID>Microsoft Corporation.Surface.Surface Duo.1930</DevicePlatformID>
+    <DevicePlatformID>OEMB1.*.OEMB1 Product.*</DevicePlatformID>
+    <DevicePlatformID>OEMEP.*.OEMEP Product.*</DevicePlatformID>
+  </DevicePlatformIDs>
   <ReleaseType>Test</ReleaseType>
   <BuildType>fre</BuildType>
   <Languages>
     <Language Default="true">en-US</Language>
   </Languages>
   <AdditionalFMs>
-    <!-- Microsoft -->
-    <AdditionalFM>D:\Surface-Drivers-main\adaptationkits\FOS\FMs\WindowsCoreProductionFM.xml</AdditionalFM>
-    <AdditionalFM>D:\Surface-Drivers-main\adaptationkits\FOS\FMs\WindowsCoreNonProductionFM.xml</AdditionalFM>
-    <AdditionalFM>D:\Surface-Drivers-main\adaptationkits\FOS\FMs\MobileDeviceSpaceFM.xml</AdditionalFM>
-    <AdditionalFM>D:\Surface-Drivers-main\adaptationkits\FOS\FMs\CommonContainerFM.xml</AdditionalFM>
-    <AdditionalFM>D:\Surface-Drivers-main\adaptationkits\FOS\FMs\ArgonContainerFM.xml</AdditionalFM>
-    <AdditionalFM>D:\Surface-Drivers-main\adaptationkits\FOS\FMs\FOSNonProductionFM.xml</AdditionalFM>
-    <AdditionalFM>D:\Surface-Drivers-main\adaptationkits\FOS\FMs\FactoryOSArgonProductSpecificFM.xml</AdditionalFM>
-    <AdditionalFM>D:\Surface-Drivers-main\adaptationkits\FOS\FMs\FactoryOSFM.xml</AdditionalFM>
-    <AdditionalFM>D:\Surface-Drivers-main\adaptationkits\FOS\FMs\FactoryOSProductSpecificFM.xml</AdditionalFM>
-    <AdditionalFM>D:\Surface-Drivers-main\adaptationkits\FOS\FMs\FactoryOSRamBootFM.xml</AdditionalFM>
-    <!-- OEM -->
-    <AdditionalFM>D:\Surface-Drivers-main\adaptationkits\FOS\FMs\OEM\EpsilonDeviceFM.xml</AdditionalFM>
-    <AdditionalFM>D:\Surface-Drivers-main\adaptationkits\FOS\FMs\OEM\EpsilonDeviceDriversFM.xml</AdditionalFM>
-    <AdditionalFM>D:\Surface-Drivers-main\adaptationkits\FOS\FMs\OEM\MicrosoftSurfaceDeviceAppsFM.xml</AdditionalFM>
+    <AdditionalFM>%WSKContentRoot%\FMFiles\arm64\FactoryOS\WindowsCoreProductionFM.xml</AdditionalFM>
+    <AdditionalFM>%WSKContentRoot%\FMFiles\arm64\FactoryOS\WindowsCoreNonProductionFM.xml</AdditionalFM>
+    <AdditionalFM>%WSKContentRoot%\FMFiles\arm64\FactoryOS\MobileDeviceSpaceFM.xml</AdditionalFM>
+    <AdditionalFM>%WSKContentRoot%\FMFiles\arm64\FactoryOS\CommonContainerFM.xml</AdditionalFM>
+    <AdditionalFM>%WSKContentRoot%\FMFiles\arm64\FactoryOS\ArgonContainerFM.xml</AdditionalFM>
+    <AdditionalFM>%WSKContentRoot%\FMFiles\arm64\FactoryOS\FOSNonProductionFM.xml</AdditionalFM>
+    <AdditionalFM>%WSKContentRoot%\FMFiles\arm64\FactoryOS\FactoryOSArgonProductSpecificFM.xml</AdditionalFM>
+    <AdditionalFM>%WSKContentRoot%\FMFiles\arm64\FactoryOS\FactoryOSFM.xml</AdditionalFM>
+    <AdditionalFM>%WSKContentRoot%\FMFiles\arm64\FactoryOS\FactoryOSProductSpecificFM.xml</AdditionalFM>
+    <AdditionalFM>%WSKContentRoot%\FMFiles\arm64\FactoryOS\FactoryOSRamBootFM.xml</AdditionalFM>
+    <AdditionalFM>%_NTTREE%\Andromeda855DeviceFM.xml</AdditionalFM>
+    <AdditionalFM>%_NTTREE%\Andromeda855DeviceDriversFM.xml</AdditionalFM>
   </AdditionalFMs>
-  <MachineInfoFile>D:\Surface-Drivers-main\adaptationkits\FOS\machineinfo.epsilon.xml</MachineInfoFile>
+  <MachineInfoFile>%_NTTREE%\machineinfo.epsilon.xml</MachineInfoFile>
   <Features>
     <Microsoft>
       <Feature>ALLOW_CONNECTEDSTANDBY</Feature>
@@ -39,8 +39,8 @@
       <Feature>FACTORY_ORCHESTRATOR_SERVICE</Feature>
       <Feature>FONTSIZE_30</Feature>
       <Feature>MANUFACTURING_MODE_EMPTY_PROFILE</Feature>
-      <Feature>MANUFACTURING_POWER_SCHEME</Feature>
       <Feature>MANUFACTURING_POWER_SCHEME_SLEEP_ON_POWER</Feature>
+      <Feature>MANUFACTURING_POWER_SCHEME</Feature>
       <Feature>MICROSOFT_EDGE</Feature>
       <Feature>OEM_IMAGE</Feature>
       <Feature>OFFLINE_CRASH_DUMP_SUPPORTED</Feature>
@@ -56,8 +56,8 @@
       <Feature>WCOS_AUDIO_MMESUPPORT</Feature>
       <Feature>WCOS_CLOUD_FILES</Feature>
       <Feature>WCOS_CONTAINERS</Feature>
-      <Feature>WCOS_DEVICEPORTAL</Feature>
       <Feature>WCOS_DEVICEPORTAL_WOW</Feature>
+      <Feature>WCOS_DEVICEPORTAL</Feature>
       <Feature>WCOS_DIAGHOST_HOST</Feature>
       <Feature>WCOS_DISPLAY_ENHANCEMENT_SERVICE</Feature>
       <Feature>WCOS_DRIVERS_USB_ETHERNET</Feature>
