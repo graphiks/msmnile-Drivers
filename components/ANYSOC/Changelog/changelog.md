@@ -1,9 +1,9 @@
-## Surface Duo Drivers BSP - Version 2310.70 (Andromeda)
+## Surface Duo Drivers BSP - Version 2311.30 (Ethos)
 
 <details>
   <summary>General information</summary>
   <p>
-**Released:** 10/22/2023 11:59 PM UTC+1
+**Released:** 11/09/2023 11:59 PM UTC+1
 
 **Quality:** Preview
 
@@ -14,7 +14,7 @@ You can view compatibility for this release, along with important information an
 <details>
   <summary>Important information</summary>
   <p>
-- ⚠️ This version of the drivers needs to be paired with UEFI version greater than or equal to 2310.70.
+- ⚠️ This version of the drivers needs to be paired with UEFI version greater than or equal to 2311.30.
 
 - ⚠️ For users who are updating from an earlier release than version 2301.93, please reinstall.
 
@@ -30,7 +30,7 @@ You can view compatibility for this release, along with important information an
 
 [▶️ Install Surface Duo 2 UEFI and Drivers for Windows from scratch (Clean Installation)](https://github.com/WOA-Project/SurfaceDuo-Guides/blob/main/InstallWindows/InstallWindows-SurfaceDuo2.md)
 
-[▶️ Update from an older version of Surface Duo UEFI and Drivers (both got updated with v2310.70)](https://github.com/WOA-Project/SurfaceDuo-Guides/blob/main/Update/UpdateDriversAndUEFI.md)
+[▶️ Update from an older version of Surface Duo UEFI and Drivers (both got updated with v2311.30)](https://github.com/WOA-Project/SurfaceDuo-Guides/blob/main/Update/UpdateDriversAndUEFI.md)
 
 ---
 
@@ -40,42 +40,26 @@ You can view compatibility for this release, along with important information an
 
 What's new?
 
-- We made some improvements in order to enable more consistent single screen mode posture experiences. There is still some rough edges, but the experience is drastically better
+- Fixes an issue where connecting to external wireless displays using Miracast would crash the device
 
-- We also made further changes to ensure the apps you use and love open on the screen you opened them from. This is still beta quality and sometimes apps may still open on the wrong screen. again, room for improvements
+- Rendering of both displays is now faster thanks to not having to rely on MDP BLT Engine anymore
 
-- We fixed an issue with Windows 11 ShyTaskbar (compact taskbar) preventing from maximizing fully apps on the second display as well
+- Both displays now have vsync working so one doesn't lag with the other anymore
 
-- We also fixed numerous issues impacting the use of phone calls on latest Canary channel insider builds
+- Fixed a crash issue when decoding/encoding videos like on youtube or when recording the desktop using the snipping tool application
 
-- The watermark also now only displays in a single screen, and ShyTaskbar enablement is more reliable
-
-- We fixed an issue where the device serial number reported in settings (& firmware) would not match the device serial number, as a result, the surface app is now able to automatically register your device with your microsoft account and give status on your warranty information
-
-- As part of the serial number changes, we also enabled roaming of device status across every device with the surface app installed, as you can see, here is shown another Surface Duo registered and charging
-
-- We fixed some issues that impacted accurate battery status reporting, we also fixed an issue impacting the use of specific debug utilities to view battery information on Surface Duo devices, we may release an utility another day as well for public consumption
+- Workarounded a crash issue regarding the battery miniport interface driver during clean installations of Windows Desktop
 
 - General system stability improvements to enhance the user's experience.
 
-<details>
-  <summary><b><i>Important!</i></b> New definition files are present, here's a summary of how to proceed:</summary>
-  <p>
-- I am running a build < 17763, you are unsupported.
+__New!__: We are now providing smaller download packages, specifically tailored towards a given device and OS target.
 
-- I am running a build < 18362, use Driver Updater with ```\definitions\Desktop\ARM64\epsilon_rs5.txt```
-
-- I am running a build < 19041, use Driver Updater with ```\definitions\Desktop\ARM64\epsilon_ti.txt```
-
-- I am running a build >= 25905, use Driver Updater with ```\definitions\Desktop\ARM64\epsilon.txt```
-  </p>
-</details>
+- Please download ```SurfaceDuo-Drivers-v2311.30-Desktop-Epsilon.zip``` if you want drivers for Surface Duo 1
+- Please download ```SurfaceDuo-Drivers-v2311.30-Desktop-Zeta.zip``` if you want drivers for Surface Duo 2
 
 <details>
   <summary>Known issues</summary>
   <p>
-- Dialer and the underlying phone stack are not available under Gallium Semester OS builds (Canary Channel)
-
 - Installing Gallium Semester Insider builds may lead to a black screen on second boot of the OS, simply press the power button to continue.
 
 - Booting Windows 10 18362/18363 will lead to "static screen" effects on the right display, much like driver releases from last year did on any version of Windows. A fix is being worked on for the next release.
@@ -91,8 +75,6 @@ What's new?
 - On device speakers are not functional.
 
 - Dongles are not detected correctly when plugged into the USB Type-C port.
-
-- Battery charging remains unstable and not recommended.
 
 - Updating drivers may lead to weird configurations if done on old driver releases.
 
@@ -116,7 +98,7 @@ What's new?
 
 - Digitizers aren't calibrated correctly.
 
-- Flipping the device, however, is not smooth.
+- Flipping the device is not smooth.
 
 - Users upgrading from releases older than the January ones may want to clean install again.
 
